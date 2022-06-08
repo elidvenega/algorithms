@@ -9,10 +9,6 @@
 
 // splice the first of the two lists then combine them
 
-/* 
-  I use splice to combine two lists together and merge them 
-*/
-
 // first try
 // var mergeTwoLists = function (list1, list2) {
 //    list1 = [1,3,3,4];
@@ -52,31 +48,44 @@
 
 // console.log(frankenSplice([1, 3, 3, 4], [1, 2, 3, 4]), 1);
 
+/* 
+  I merge two arrays together into one sorted list
+*/
+
 // third try
-function mergeTwo(arr1, arr2) {
-  let merged = [];
-  let index1 = 0;
-  let index2 = 0;
-  let current = 0;
 
-  while (current < (arr1.length + arr2.length)) {
+var mergeTwoLists = function(list1, list2) {
+  const dummy = new ListNode(-Infinity);
+  let prev = dummy;
 
-    let isArr1Depleted = index1 >= arr1.length;
-    let isArr2Depleted = index2 >= arr2.length;
-
-    if (!isArr1Depleted && (isArr2Depleted || (arr1[index1] < arr2[index2]))) {
-      merged[current] = arr1[index1];
-      index1++;
+  while(list1 && list2) {
+    if(list1.val <= list2.val) {
+      prev.next = list1;
+      prev = list1;
+      list1 = list1.next
     } else {
-      merged[current] = arr2[index2];
-      index2++;
+      prev.next = list2;
+      prev = list2;
+      list2 = list2.next;
     }
-
-    current++;
   }
 
-  return merged;
-}
+  if(!list1)prev.next = list2;
+  if(!list2)prev.next = list1;
+
+  return dummy.next;
+};
 
 
-console.log(mergeTwo([1, 3, 3, 4], [1, 2, 3, 4]));
+
+
+
+
+
+
+
+
+
+
+
+
