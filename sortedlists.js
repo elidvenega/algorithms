@@ -55,7 +55,9 @@
 // third try
 
 var mergeTwoLists = function(list1, list2) {
+  // empty value for merge list
   const dummy = new ListNode(-Infinity);
+  // previous value
   let prev = dummy;
 
   while(list1 && list2) {
@@ -75,17 +77,3 @@ var mergeTwoLists = function(list1, list2) {
 
   return dummy.next;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
