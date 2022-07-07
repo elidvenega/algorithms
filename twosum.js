@@ -36,26 +36,23 @@
 // youtube tutorial
 function twoSum(nums, target) {
   // empty object with previous values
-    const previousValues = {};
-    // loop through array
-    for(let i = 0; i < nums.length; i++) {
-      
-        const currentNumber = nums[i]
-        const neededValues = target - currentNumber;
-        const index2 = previousValues[neededValues]
-        if (index2 != null) {
-            return [index2, i]
-        } else {
-            previousValues[currentNumber] = i
-        }
+  const previousValues = {};
+  // loop through array
+  for (let i = 0; i < nums.length; i++) {
+    // current number
+    const currentNumber = nums[i];
+    // subtracting target number - currentNumber
+    const neededValues = target - currentNumber;
+    // will return number if index is true
+    const index2 = previousValues[neededValues];
+    if (index2 != null) {
+      return [index2, i];
+    } else {
+      previousValues[currentNumber] = i;
     }
+  }
 }
 
-let arr = [1,2,4,5,6];
+let arr = [1, 2, 4, 5, 6];
 // it does work
-console.log(twoSum(arr,11));
-
-
-
-
-
+console.log(twoSum(arr, 11));
