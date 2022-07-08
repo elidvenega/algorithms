@@ -1,10 +1,10 @@
+// Uses array
+
 var removeDuplicates = function (nums) {
-  let uniqueChars = nums.filter((c, index) => {
-    nums.indexOf(c) === index;
-  });
-  return uniqueChars
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] == nums[i + 1]) {
+      nums.splice(i + 1, 1);
+      i--;
+    }
+  }
 };
-
-let arr = [1, 2, 2, 3];
-
-console.log(removeDuplicates(arr));
