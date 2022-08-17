@@ -1,12 +1,12 @@
-//Original answer 
+//Original answer
 
-// var removeDuplicates = function (nums) {
-//   let uniqueChars = nums.filter((c, index) => {
-//     nums.indexOf(c) === index;
-//   });
-//   return uniqueChars
-// };
+var removeDuplicates = function (nums) {
+  let uniqueChars = nums.filter((c, index) => {
+    nums.indexOf(c) === index;
+  });
+  return uniqueChars;
+};
 
-// let arr = [1, 2, 2, 3];
+let arr = [1, 2, 2, 3];
 
-// console.log(removeDuplicates(arr));
+console.log(removeDuplicates(arr));
