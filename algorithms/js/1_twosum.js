@@ -55,4 +55,5 @@ function twoSum(nums, target) {
 
 let arr = [1, 2, 4, 5, 6];
 // it does work
+//5 + 6
 console.log(twoSum(arr, 11));
